@@ -1,5 +1,5 @@
-import 'milligram';
-import './style.css';
+
+import './style.scss';
 import $ from "cash-dom";
 import sha256 from 'crypto-js/sha256'
 import hmacSHA256 from "crypto-js/hmac-sha256";
