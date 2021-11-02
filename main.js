@@ -112,3 +112,5 @@ function buildWidget(name, onLoad = () => {} ) {
   s.addEventListener("load", onLoad);
   return s;
 }
+
+$("#app-version").text(__APP_VERSION__);

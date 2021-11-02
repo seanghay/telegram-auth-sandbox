@@ -15,6 +15,13 @@
     .not-verified {
       color: rgb(238, 80, 17);
     }
+
+    #app-version {
+      border: 1px solid rgba(0,0,0, .1);
+      padding: 4px 10px;
+      border-radius: 1em;
+      color: rgba(0,0,0, .45);
+    }
   </style>
 </head>
 
@@ -55,7 +62,7 @@
           <pre><code id="code-output"></code></pre>
         </div>
       </div>
-    
+
       <div class="row">
         <blockquote>
           <p>Do not forget to set your bot domain name to <strong>telegram-auth-sandbox.netlify.app</strong></p>
@@ -71,26 +78,29 @@
       <div class="row">
         <div class="column">
           <label for="data">Data (JSON)</label>
-          <textarea name="data" id="data" cols="50"
-          style="min-height: 150px;"
-          rows="50"></textarea>
+          <textarea name="data" id="data" cols="50" style="min-height: 150px;" rows="50"></textarea>
         </div>
       </div>
-       <div class="row">
-         <div class="column">
-           <label for="token">Bot Token</label>
-           <input type="text" name="token" placeholder="e.g. 12345678:abcabcabcabcabc" id="token">
-         </div>
-       </div>
-    
-       <div class="row">
-         <div class="column">
-           <p id="message"></p>
-         </div>
-       </div>
+      <div class="row">
+        <div class="column">
+          <label for="token">Bot Token</label>
+          <input type="text" name="token" placeholder="e.g. 12345678:abcabcabcabcabc" id="token">
+        </div>
       </div>
 
-    
+      <div class="row">
+        <div class="column">
+          <p id="message"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column" style="text-align: center;">
+          <small id="app-version"></small>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script type="module" src="/main.js"></script>
 </body>
