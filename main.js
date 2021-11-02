@@ -60,7 +60,8 @@ function onValueChanges() {
 
     return;
   }
-  
+  messageEl.removeClass("verified");
+  messageEl.removeClass("not-verified");
   messageEl.text('Invalid')
 }
 
