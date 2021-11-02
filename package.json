@@ -1,0 +1,16 @@
+{
+  "name": "telegram-auth-sandbox",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.6.4"
+  },
+  "dependencies": {
+    "cash-dom": "^8.1.0",
+    "milligram": "^1.4.1"
+  }
+}

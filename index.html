@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telegram Auth Sandbox</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+
+      <div class="row">
+        <div class="column">
+          <h2>Telegram Auth Sandbox</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label for="username">Bot Username</label>
+          <input type="text" name="username" placeholder="e.g. abc_bot" id="username">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <button id="button-create" disabled>Create</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column" id="telegram-login-container">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <h3>Result</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <pre><code id="code-output"></code></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
