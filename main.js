@@ -1,10 +1,69 @@
 import 'milligram';
 import './style.css';
 import $ from "cash-dom";
+import sha256 from 'crypto-js/sha256'
+import hmacSHA256 from "crypto-js/hmac-sha256";
+import Hex from "crypto-js/enc-hex";
 
 const username = $('#username')
 const buttonCreate = $('#button-create');
 const widgetContainer = $("#telegram-login-container");
+
+const tokenEl = $('#token')
+const dataEl = $('#data')
+const messageEl = $('#message');
+
+tokenEl.on('input', () => onValueChanges());
+dataEl.on("input", () => onValueChanges());
+
+function parseData(input) {
+  try {
+    return JSON.parse(input);
+  } catch (e) {
+    return null;
+  }
+}
+
+function validate(data, token) {
+
+  const checkString = Object.keys(data)
+     .filter((key) => key !== "hash")
+     .map((key) => `${key}=${data[key]}`)
+     .sort()
+     .join("\n");
+  
+  const secret = sha256(token);
+  const result = Hex.stringify(hmacSHA256(checkString, secret));
+
+  console.log({
+    data,
+    token,
+    checkString 
+  })
+
+  return data.hash === result;
+}
+
+function onValueChanges() {
+  const data = parseData(dataEl.val());
+  const token = tokenEl.val();
+  if (data && token) {
+    const isValid = validate(data, token.trim());
+      messageEl.removeClass('verified')
+    if (isValid) {
+      messageEl.removeClass("not-verified");
+      messageEl.addClass('verified').text('Verified');
+    } else {
+      messageEl.removeClass('verified')
+      messageEl.addClass("not-verified").text("Not Verified");
+    }
+
+    return;
+  }
+  
+  messageEl.text('Invalid')
+}
+
 
 /**
  * 

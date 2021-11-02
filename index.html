@@ -6,6 +6,16 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Telegram Auth Sandbox</title>
+
+  <style>
+    .verified {
+      color: rgb(28, 175, 28);
+    }
+
+    .not-verified {
+      color: rgb(238, 80, 17);
+    }
+  </style>
 </head>
 
 <body>
@@ -51,9 +61,36 @@
           <p>Do not forget to set your bot domain name to <strong>telegram-auth-sandbox.netlify.app</strong></p>
         </blockquote>
       </div>
-    </div>
 
+      <div class="row">
+        <div class="column">
+          <h3>Checking authorization</h3>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="column">
+          <label for="data">Data (JSON)</label>
+          <textarea name="data" id="data" cols="50"
+          style="min-height: 150px;"
+          rows="50"></textarea>
+        </div>
+      </div>
+       <div class="row">
+         <div class="column">
+           <label for="token">Bot Token</label>
+           <input type="text" name="token" placeholder="e.g. 12345678:abcabcabcabcabc" id="token">
+         </div>
+       </div>
+    
+       <div class="row">
+         <div class="column">
+           <p id="message"></p>
+         </div>
+       </div>
+      </div>
+
+    
   </div>
   <script type="module" src="/main.js"></script>
 </body>
